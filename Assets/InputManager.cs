@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputScript : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
     public PlayerController playerController;
     public CameraController cameraController;
-    public QolScript qolScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +27,8 @@ public class InputScript : MonoBehaviour
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPosition.z = 0; // Zç¿ïWÇÕ2DÇÃèÍçáå≈íËílÇ…Ç∑ÇÈ
+
         playerController.PlayerClickMove(worldPosition);
-        qolScript.PlayerClickMoveEffect(worldPosition);
     }
 
     void toMoveCamera(Vector3 direction)

@@ -20,7 +20,6 @@ public class CameraController : MonoBehaviour
 
     public void MoveCamera(Vector3 direction)
     {
-
         if (!isMoving)
         {
             StartCoroutine(MoveCameraSmoothly(direction));

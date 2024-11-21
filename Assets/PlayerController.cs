@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 4f;
 
-
     private Rigidbody2D rb;
+    public PlayerNextPosManager pNextPosManager;
     private Vector3 nextPos;
     private Vector3 direction;
     private bool isMoving = false;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public void PlayerClickMove(Vector3 worldPosition)
     {
         nextPos = worldPosition;
+        pNextPosManager.ClickMoveQol(nextPos);
         isMoving = true;
     }
 
@@ -37,18 +38,16 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 direction = (nextPos - transform.position).normalized;
         float step = speed * Time.fixedDeltaTime;
-
         rb.MovePosition(transform.position + direction * step);
 
         if (Vector3.Distance(transform.position, nextPos) < 0.1f)
         {
             transform.position = nextPos; // 最終的に位置を正確に合わせる
             isMoving = false;
+            pNextPosManager.ClickMoveEnd();
         }
-
     }
 
     public Vector3 getNextPos() { return nextPos; }
     public bool GetIsMoving() { return isMoving; }
-
 }

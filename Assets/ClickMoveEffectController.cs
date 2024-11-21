@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectController : MonoBehaviour
+public class ClickMoveEffectController : MonoBehaviour
 {
     public float fadeDuration = 2f; // フェードアウトにかける時間
     private Renderer objectRenderer;
