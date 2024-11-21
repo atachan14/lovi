@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 4f;
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     {
         if (isMoving) MoveToNextPos();
     }
-    public void ClickMove(Vector3 worldPosition)
+    public void PlayerClickMove(Vector3 worldPosition)
     {
         nextPos = worldPosition;
         isMoving = true;
@@ -40,7 +40,15 @@ public class Player : MonoBehaviour
 
         rb.MovePosition(transform.position + direction * step);
 
-        if (transform.position == nextPos) isMoving = false;
+        if (Vector3.Distance(transform.position, nextPos) < 0.1f)
+        {
+            transform.position = nextPos; // 最終的に位置を正確に合わせる
+            isMoving = false;
+        }
 
     }
+
+    public Vector3 getNextPos() { return nextPos; }
+    public bool GetIsMoving() { return isMoving; }
+
 }
