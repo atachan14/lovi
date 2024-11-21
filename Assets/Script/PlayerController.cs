@@ -48,6 +48,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public Vector3 getNextPos() { return nextPos; }
-    public bool GetIsMoving() { return isMoving; }
 }

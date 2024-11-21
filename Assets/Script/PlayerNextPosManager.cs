@@ -8,7 +8,7 @@ public class PlayerNextPosManager : MonoBehaviour
     public GameObject pClickMoveEffect;
     public GameObject pClickMoveMark;
 
-    public GameObject pCMM;
+    private GameObject pCMM;
     private float NextPos;
 
     private Vector3 pNextPos;
