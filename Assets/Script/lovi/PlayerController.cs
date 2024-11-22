@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 4f;
 
     private Rigidbody2D rb;
-    public PlayerNextPosManager pNextPosManager;
+    public NextPosManager pNextPosManager;
     private Vector3 nextPos;
     private Vector3 direction;
     private bool isMoving = false;

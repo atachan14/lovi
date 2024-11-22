@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3581213340728432811}
   - component: {fileID: 7370472522354590917}
   - component: {fileID: 5785449630301701879}
+  - component: {fileID: 3169063353122054804}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -34,7 +35,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7671005376841149342}
   - {fileID: 4188768161223982142}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  pNextPosManager: {fileID: 1798608101844266004}
+  pNextPosManager: {fileID: 0}
 --- !u!114 &7370472522354590917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +194,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+--- !u!114 &3169063353122054804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156704428516980344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 715948062
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &5808763464305684159
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4188768161223982142}
   - component: {fileID: 3345823498642477850}
+  - component: {fileID: 2211879263881247606}
   m_Layer: 0
   m_Name: MeltedEffect
   m_TagString: Untagged
@@ -278,50 +300,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6832905220434817835
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7671005376841149342}
-  - component: {fileID: 1798608101844266004}
-  m_Layer: 0
-  m_Name: pNextPosManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7671005376841149342
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6832905220434817835}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2526281188917948261}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1798608101844266004
+--- !u!114 &2211879263881247606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6832905220434817835}
+  m_GameObject: {fileID: 5808763464305684159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f5aeb0c009fda4fbceb254904052bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e0c8337d73839f488e67106fef43928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pController: {fileID: 3581213340728432811}
-  pClickMoveEffect: {fileID: 6182275077804975917, guid: cc64e99d0008689489328ac437d56fdb, type: 3}
-  pClickMoveMark: {fileID: 7042895240213307620, guid: 78b1d66086038b2499ffa4a821963ad0, type: 3}
+  pSta: {fileID: 0}

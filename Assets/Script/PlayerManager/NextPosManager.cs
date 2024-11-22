@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerNextPosManager : MonoBehaviour
+public class NextPosManager : MonoBehaviour
 {
     public PlayerController pController;
     public GameObject pClickMoveEffect;
@@ -15,7 +15,7 @@ public class PlayerNextPosManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pCMM = Instantiate(pClickMoveMark, transform.position, Quaternion.identity);
+        pCMM = Instantiate(pClickMoveMark, transform.position, Quaternion.identity,transform.parent);
         pCMM.SetActive(false);
     }
 
@@ -29,7 +29,7 @@ public class PlayerNextPosManager : MonoBehaviour
     {
         transform.position = nextPos;
 
-        Instantiate(pClickMoveEffect, nextPos, Quaternion.identity);
+        Instantiate(pClickMoveEffect, nextPos, Quaternion.identity,transform.parent);
         pCMM.transform.position = nextPos;
         pCMM.SetActive(true);
     }
